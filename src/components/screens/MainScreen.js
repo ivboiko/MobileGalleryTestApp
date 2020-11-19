@@ -6,7 +6,7 @@ import {ListFooter} from '../flatlistParts/ListFooter';
 import {PhotoItem} from '../flatlistParts/PhotoItem';
 import {ListSeparator} from '../flatlistParts/ListSeparator';
 import {connect} from 'react-redux';
-import {getRandomPhotos} from '../../redux/thunk/thunk';
+import {getPhotos} from '../../redux/thunk/thunk';
 import {theme} from '../../theme/theme';
 
 const MainScreen = (props) => {
@@ -37,12 +37,12 @@ const MainScreen = (props) => {
 
   const onRefresh = () => {
     setRefreshing(true);
-    props.getRandomPhotos(1, true);
+    props.getPhotos(1, true);
   };
 
   const onEndReached = () => {
     if (!onEndReachedCalledDuringMomentum) {
-      props.getRandomPhotos(pageNumber, false);
+      props.getPhotos(pageNumber, false);
       if (!props.isFetchingError) {
         setPageNumber(pageNumber + 1);
       }
@@ -88,7 +88,7 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, {getRandomPhotos})(MainScreen);
+export default connect(mapStateToProps, {getPhotos})(MainScreen);
 
 const styles = StyleSheet.create({
   photosContainer: {

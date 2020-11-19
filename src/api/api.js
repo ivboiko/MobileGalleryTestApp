@@ -1,7 +1,7 @@
 import {API_URL, API_ACCESS_KEY} from '@env';
 
 export const unsplashAPI = {
-  getRandomPhotos(pageNumber) {
+  getPhotos(pageNumber) {
     return fetch(
       `${API_URL}/photos?client_id=${API_ACCESS_KEY}&page=${pageNumber}`,
     )
