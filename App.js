@@ -54,7 +54,7 @@ export default connect(null, {getRandomPhotos})(App);
 const styles = StyleSheet.create({
   headerText: {
     fontSize: 28,
-    color: theme.mainTextColor,
+    color: theme.mainColor,
     fontWeight: '500',
     fontFamily: theme.semiBoldText,
   },

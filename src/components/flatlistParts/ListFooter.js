@@ -25,6 +25,6 @@ const styles = StyleSheet.create({
   footerText: {
     fontSize: 20,
     fontFamily: theme.semiBoldText,
-    color: theme.mainTextColor,
+    color: theme.mainColor,
   },
 });
